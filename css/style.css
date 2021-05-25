@@ -3049,8 +3049,8 @@ body {
   content: "";
   display: inline-block;
   vertical-align: bottom;
-  width: 1rem;
-  height: 1rem;
+  width: 16px;
+  height: 16px;
   margin-right: 8px;
   border-radius: 50%;
   border-style: solid;
