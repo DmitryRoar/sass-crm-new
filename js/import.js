@@ -48,11 +48,20 @@ class HttpImport {
     this.#getTemplate(data)
   }
 
+  async #getToken() {
+    const {email, password} = this.options.authImputs
+    const res = await this.#request('https://izibabyshop.com.ua/api/login_check', {
+      method: 'POST',
+      body: {email, password}
+    })
+    const data = await res.json()
+    localStorage.setItem('user-token', data.token)
+  }
+
   async #request(url, {method, body, headers = {}}) {
     try {
       return await fetch(url, {
         method,
-        mode: 'cors',
         body: JSON.stringify(body),
         headers: {
           'Content-Type': 'application/json', 
@@ -62,16 +71,6 @@ class HttpImport {
     } catch (e) {
       console.log(e)
     }
-  }
-
-  async #getToken() {
-    const {email, password} = this.options.authImputs
-    const res = await this.#request('https://izibabyshop.com.ua/api/login_check', {
-      method: 'POST',
-      body: {email, password}
-    })
-    const data = await res.json()
-    localStorage.setItem('user-token', data.token)
   }
 }
 
