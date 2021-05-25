@@ -54,7 +54,11 @@ class HttpImport {
       return await fetch(url, {
         method,
         body: JSON.stringify(body),
-        headers: {'Content-Type': 'application/json', ...headers}
+        headers: {
+          'Content-Type': 'application/json', 
+          'Access-Control-Allow-Origin': '*',
+          ...headers
+        }
       })
     } catch (e) {
       console.log(e)
