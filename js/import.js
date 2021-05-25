@@ -11,26 +11,27 @@ class HttpImport {
   }
 
   #getTemplate({url = '', user = '', error = '', message = ''}) {
-    let $wrap = ``
+    let $template = ``
 
     if (url) {
-      $wrap = `
-      <div id="result">
+      $template = `
         <ul>
           <li>url: <strong>${url}</strong></li>
           <li>user: <strong>${user}</strong></li>
         </ul>
-      </div>
       `
     } else {
-      $wrap = `
-      <div id="result">
-        <ul>
-          <li>error: ${error || message}</li>
-        </ul>
-      </div>
+      $template = `
+      <ul>
+        <li>error: ${error || message}</li>
+      </ul>
       `
     }
+
+    const $wrap = `
+    <div id="result-wrap">${$template}</div>
+    `
+
     document.querySelector('#result-wrap').innerHTML = $wrap
   }
 
