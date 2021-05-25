@@ -3409,4 +3409,7 @@ body {
   .info-icon {
     display: none !important;
   }
+  .import-settings.column {
+    width: 100%
+  }
 }
