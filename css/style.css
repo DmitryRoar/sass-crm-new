@@ -3042,8 +3042,54 @@ body {
   align-items: center;
 }
 
-.radio__button label {
-  margin: 0 4px 0 8px;
+.radio__button label > input[type="radio"] {
+  display: none;
+}
+.radio__button label > input[type="radio"] + *::before {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 8px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #232323;
+}
+.radio__button label > input[type="radio"]:checked + * {
+  color: #232323;
+}
+.radio__button label > input[type="radio"]:checked + *::before {
+  background: radial-gradient(#9C94FC 0%, #9C94FC 40%, transparent 50%, transparent);
+  border-color: #9C94FC;
+}
+
+.radio__button.disabled label > input[type="radio"] + *::before {
+  border-color: #BDBDBD;
+}
+
+.radio__button.disabled label > input[type="radio"]:checked + *::before {
+  background: radial-gradient(#BDBDBD 0%, #BDBDBD 40%, transparent 50%, transparent);
+  border-color: #BDBDBD;
+}
+
+.radio__button label > input[type="radio"] ~ *:hover::before {
+  background: radial-gradient(#6F64F8 0%, #6F64F8 40%, transparent 50%, transparent);
+  border-color: #6F64F8;
+}
+
+.radio__button.disabled label > input[type="radio"] ~ *:hover::before {
+  background: radial-gradient(#BDBDBD 0%, #BDBDBD 40%, transparent 50%, transparent);
+  border-color: #BDBDBD;
+}
+
+.radio__button label > input[type="radio"] + * {
+  display: inline-block;
+}
+
+.radio__button label span {
+  margin-right: 6px;
 }
 
 .import.radio__button {
@@ -3257,6 +3303,7 @@ body {
 #result-wrap {
   background: red;
   color: #fff;
+  font-size: 1.3rem;
 }
 
 @media screen and (max-width: 1450px) {

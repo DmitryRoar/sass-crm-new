@@ -45,7 +45,6 @@ class HttpImport {
       }
     )
     const data = await res.json()
-    console.log(data)
     this.#getTemplate(data)
   }
 
@@ -56,7 +55,6 @@ class HttpImport {
         body: JSON.stringify(body),
         headers: {
           'Content-Type': 'application/json', 
-          'Access-Control-Allow-Origin': '*',
           ...headers
         }
       })
