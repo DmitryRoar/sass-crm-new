@@ -3357,6 +3357,9 @@ body {
     text-align: center;
     margin-bottom: 10px !important;
   }
+  .import-settings.column {
+    width: 100%
+  }
 }
 
 @media screen and (max-width: 523px) {
@@ -3408,8 +3411,5 @@ body {
 @media screen and (max-width: 407px) {
   .info-icon {
     display: none !important;
-  }
-  .import-settings.column {
-    width: 100%
   }
 }
