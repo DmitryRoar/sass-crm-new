@@ -3404,3 +3404,9 @@ body {
     margin-top: -22px;
   }
 }
+
+@media screen and (max-width: 407px) {
+  .info-icon {
+    display: none !important;
+  }
+}
