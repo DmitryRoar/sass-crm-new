@@ -52,6 +52,7 @@ class HttpImport {
     try {
       return await fetch(url, {
         method,
+        mode: 'cors',
         body: JSON.stringify(body),
         headers: {
           'Content-Type': 'application/json', 
