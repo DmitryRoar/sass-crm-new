@@ -3075,6 +3075,10 @@ body {
 }
 
 .radio__button label > input[type="radio"] ~ *:hover::before {
+  border-color: #6F64F8;
+}
+
+.radio__button label > input[type="radio"]:checked ~ *:hover::before {
   background: radial-gradient(#6F64F8 0%, #6F64F8 40%, transparent 50%, transparent);
   border-color: #6F64F8;
 }
